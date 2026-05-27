@@ -8,7 +8,34 @@ Record of RTL design and Synthesis Workshop using SKY130 Technology conducted by
 (design+tb->iverilog->vcd(value change dump)->gtkwave(view waveform))
 <img width="1073" height="655" alt="image" src="https://github.com/user-attachments/assets/0913a8b2-21a8-4d1b-95bd-9b5f30039761" />
 ------------------------------------------------------------------------
-m
+ mkdir vlsi
+ cd vlsi
+ mkdir vsdflow
+ git clone  https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+ <img width="1225" height="520" alt="image" src="https://github.com/user-attachments/assets/af856d85-dd1d-4a44-b1e1-19747e4b077a" />
+    cd vlsi
+   cd vsdflow //didnt store anything in this ignore
+   ls 
+   cd sky130RTLDesignAndSynthesisWorkshop
+   ls -ltr
+   cd my_lib // has verilog_models
+   ls
+   cd lib   :This file contain the  Sky130 Standard Cell library // outside my_lib
+   cd ..
+   cd verilog_model :Content of verilog models
+   <img width="1233" height="651" alt="image" src="https://github.com/user-attachments/assets/730ea9e5-8aab-4735-84e3-9c8ef692c2de" />
+      cd sky130RTLDesignAndSynthesisworkshop
+   ls
+   cd verilog_files
+   <img width="1319" height="620" alt="image" src="https://github.com/user-attachments/assets/6de215b2-6bc9-433e-9716-90f5107f544d" />
+   in verilog_files::
+   iverilog good_mux.v tb_good_mux.v
+./a.out
+
+<img width="1784" height="87" alt="image" src="https://github.com/user-attachments/assets/3674e323-1b76-4a30-b3b9-82f366b3eb69" />
+
+
+
 -The $dumpvars system task in Verilog is used to specify which variables and hierarchy levels should be recorded in a Value Change Dump (VCD) file for later waveform analysis. It is typically used in conjunction with $dumpfile, which specifies the filename for the output
 
 -$dumpvars(level, list_of_variables_or_modules);
