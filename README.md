@@ -36,9 +36,11 @@ Record of RTL design and Synthesis Workshop using SKY130 Technology conducted by
 gtkwave tb_good_mux.vcd
 <img width="1919" height="787" alt="image" src="https://github.com/user-attachments/assets/b6308b67-38e6-4b14-9d6c-22026a29467f" />
 dont forget to appebd variables and zoom out
-
-
-
+seeing files using cat command (gvim wasnt working)
+<img width="1109" height="692" alt="image" src="https://github.com/user-attachments/assets/bf39fb99-94b3-46dc-8cc1-4c4a3dfcc34d" />
+<img width="1048" height="262" alt="image" src="https://github.com/user-attachments/assets/acf81cb1-4671-4964-b5b7-ea82b89993e0" />
+D1SK3
+-syntesizer - tool for conv rtl ->  netlist using (rtl,.lib -> yosys -> netlist)
 -The $dumpvars system task in Verilog is used to specify which variables and hierarchy levels should be recorded in a Value Change Dump (VCD) file for later waveform analysis. It is typically used in conjunction with $dumpfile, which specifies the filename for the output
 
 -$dumpvars(level, list_of_variables_or_modules);
@@ -54,14 +56,40 @@ read_verilog - read design
 read_librty - read .lib 
 write_verilog -  make netlist
 netlist is design in form of cells in .lib
----------------------------------------------
+to verify synthesis-
+
 netlist + tb(sm as rtl tb) in  iverilog  gives vcd file which put into gtkwave gives u waveform which shud be same as observed using rtl syn
+<img width="1115" height="645" alt="image" src="https://github.com/user-attachments/assets/f1d60174-9373-4dd7-9bff-952721cb5838" />
+
 ----------------------------------------------
+RTL - behavioural representaion of rewuired specificatoin
+result = netlist 
 rtl- > gate level translation =  syn
 .lib - collection of logical modules - and or nor nand and their diff flavours / specifications
 combinational delay - maxm speed of ops 
 tclk > tcq_a(prop d of ffa) + tcomb + tsetup_b
-setup timr - 
-----------------------------------------------------------------------------
+setup timr - minimum amount of time an input signal must remain stable before a triggering event
 hold time-  The minimum amount of time a data signal must remain stable after a clock edge so a flip-flop can reliably capture it
+FAST VS SLOW CELLS :-
+<img width="818" height="512" alt="image" src="https://github.com/user-attachments/assets/d5249ac9-60c3-4ab0-9a62-2718d6bd81a9" />
+
+------------------------------------------------------------------------------------------------------------
+D1SK4
+in verilog_files -> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib  // to read standard lib into our design
+<img width="815" height="607" alt="image" src="https://github.com/user-attachments/assets/2a2283dc-2a1d-4558-a95a-ab2620fef38f" />
+<img width="911" height="417" alt="image" src="https://github.com/user-attachments/assets/0e36fb20-46e9-49ce-ac23-30f123b63520" />
+
+
+read_verilog good_mux.v 
+synth -top good_mux
+<img width="650" height="384" alt="image" src="https://github.com/user-attachments/assets/ed5684b7-61b4-4ea8-b843-8f19dc3f5027" />
+
+ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+ This command converts RTL code into gates,cells which is taken from the sky130_fd_sc_hd__tt_025C_1v80.lib file.
+<img width="545" height="160" alt="image" src="https://github.com/user-attachments/assets/ed90d52f-e338-4482-9a1c-e29a2b4d1509" />
+-liberty : It generate netlists for the specified cell library (using the liberty file format) and reintegrates mapping.
+
+show
+<img width="1919" height="804" alt="image" src="https://github.com/user-attachments/assets/6309bad2-7d6d-47dc-b8df-cf65898bee04" />
+
 
