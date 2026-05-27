@@ -99,10 +99,10 @@ ans =  i1&sel | (~sel)&i0
 
 write_verilgo -noattr good_mux_netlist.v
 -noattr- By using this option no attributes are included in the output. good_mux_netlist.v : File name to which we want to write the netlist.
-check img
-<img width="1919" height="804" alt="image" src="https://github.com/user-attachments/assets/f3c38af3-4f17-4cf8-b0cb-b2ec6b371a41" />
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 <img width="1282" height="810" alt="Screenshot 2026-05-27 221951" src="https://github.com/user-attachments/assets/77bbf9e3-ff5d-4a0d-a845-22a0c2dc377e" />
-<img width="410" height="75" alt="image" src="https://github.com/user-attachments/assets/af29b9ba-e1db-420f-b04e-a278a1ab60b5" />
+
 
 
 
