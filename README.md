@@ -81,7 +81,7 @@ in verilog_files -> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v8
 
 
 read_verilog good_mux.v 
-synth -top good_mux
+synth -top good_mux1
 <img width="650" height="384" alt="image" src="https://github.com/user-attachments/assets/ed5684b7-61b4-4ea8-b843-8f19dc3f5027" />
 
  abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -91,5 +91,20 @@ synth -top good_mux
 
 show
 <img width="1919" height="804" alt="image" src="https://github.com/user-attachments/assets/6309bad2-7d6d-47dc-b8df-cf65898bee04" />
+
+1st is 2 ip nand gate = ~(i1 & sel)
+2nd is inverter = ~i0
+3rd = o2ai or and invert gate  (sel| (~i0)) | ~(i1 & sel)
+ans =  i1&sel | (~sel)&i0 
+
+write_verilgo -noattr good_mux_netlist.v
+-noattr- By using this option no attributes are included in the output. good_mux_netlist.v : File name to which we want to write the netlist.
+check img
+<img width="1919" height="804" alt="image" src="https://github.com/user-attachments/assets/f3c38af3-4f17-4cf8-b0cb-b2ec6b371a41" />
+<img width="1282" height="810" alt="Screenshot 2026-05-27 221951" src="https://github.com/user-attachments/assets/77bbf9e3-ff5d-4a0d-a845-22a0c2dc377e" />
+<img width="410" height="75" alt="image" src="https://github.com/user-attachments/assets/af29b9ba-e1db-420f-b04e-a278a1ab60b5" />
+
+
+
 
 
