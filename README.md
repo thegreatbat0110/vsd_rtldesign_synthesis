@@ -33,6 +33,9 @@ Record of RTL design and Synthesis Workshop using SKY130 Technology conducted by
 ./a.out
 
 <img width="1784" height="87" alt="image" src="https://github.com/user-attachments/assets/3674e323-1b76-4a30-b3b9-82f366b3eb69" />
+gtkwave tb_good_mux.vcd
+<img width="1919" height="787" alt="image" src="https://github.com/user-attachments/assets/b6308b67-38e6-4b14-9d6c-22026a29467f" />
+dont forget to appebd variables and zoom out
 
 
 
