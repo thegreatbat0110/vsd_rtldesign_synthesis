@@ -53,7 +53,8 @@ flip flops --
 
 ----
 
-```module dff_asyncres(input clk , d,asyncreset , output reg q);
+```verilog
+module dff_asyncres(input clk , d,asyncreset , output reg q);
 always @(posedge clk  , posedge asyncreset)
 begin
  if(asyncreset)begin
