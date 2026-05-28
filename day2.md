@@ -47,6 +47,25 @@ Difference between hierarchial and flattened
 H-Only modules level , Faster , preserved hierarchy,Modular structure 
 Flattened-whole design shown,slower,Collapsed hierarchy,Single, complex netlist
 
+flip flops --
+
+
+
+----
+
+'''module dff_asyncres(input clk , d,asyncreset , output reg q);
+always @(posedge clk  , posedge asyncreset)
+begin
+ if(asyncreset)begin
+ q <= 1'b0;
+ else
+ q<=d;
+ 
+ 
+
+end
+endmodule
+'''
 
 
 
