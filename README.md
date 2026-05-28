@@ -128,7 +128,15 @@ inside file -
 
 <img width="589" height="462" alt="image" src="https://github.com/user-attachments/assets/e25e1e09-8483-4c5a-854c-fa7fac0927ef" />
 and gate :-
+<img width="1450" height="697" alt="image" src="https://github.com/user-attachments/assets/dcd90e7d-7361-4f4d-8fb5-4e36a59b4449" />
+diff between 2 and gates 
 ![Uploading image.png…]()
+
+-sky130_fd_sc_hd__and2_0: The _0 at the end typically denotes a smaller drive strength (often a fractional or minimum-sized buffer/gate variant used to minimize area and load when a strong signal drive isn't necessary).
+
+-sky130_fd_sc_hd__and2_2: The _2 denotes a higher drive strength. It features larger internal transistors designed to charge and discharge output load capacitances much faster
+-Because a higher drive strength requires larger transistor channel widths, its physical footprint on the silicon is larger
+-transistor dimensions are larger in and2_2, its subthreshold and gate leakage currents are naturally higher.
 
 
 
