@@ -103,6 +103,32 @@ write_verilgo -noattr good_mux_netlist.v
 
 <img width="1282" height="810" alt="Screenshot 2026-05-27 221951" src="https://github.com/user-attachments/assets/77bbf9e3-ff5d-4a0d-a845-22a0c2dc377e" />
 
+---------------------------------------------------
+d2sk1
+1st line is name of lib
+-sky130: The SkyWater 130nm node technology
+-fd: Foundry
+-sc: Standard Cell.
+-hd: High Density (The cell architecture is optimized for space and area efficiency).
+-tt: Typical - Typical (The operating corner for Process, meaning nominal N-type and P-type transistor speeds).other egs fast , slow 
+-025C: 25° Celsius (The operating temperature for this specific timing model).
+-1v80: 1.80 Volts (The nominal operating voltage).
+-.lib: The Liberty Timing File format
+Process Volatge Temperature togethr tell how silicon behaves
+Needto factor in these varitaions to work evrywhere 
+
+
+inside file - 
+<img width="709" height="613" alt="image" src="https://github.com/user-attachments/assets/10340a4e-4020-441f-acd1-53e2a159c0de" />
+
+-technology - cmos tech
+ .lib containns all cells
+ cell is a keyword
+<img width="790" height="696" alt="image" src="https://github.com/user-attachments/assets/fcc6da28-0d0d-45a6-bab7-27ee4487171a" />
+
+<img width="589" height="462" alt="image" src="https://github.com/user-attachments/assets/e25e1e09-8483-4c5a-854c-fa7fac0927ef" />
+and gate :-
+![Uploading image.png…]()
 
 
 
