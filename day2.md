@@ -34,4 +34,20 @@ show
 <img width="1457" height="119" alt="image" src="https://github.com/user-attachments/assets/a9fc8488-bf9e-46c2-9411-340ede4a3a97" /> now we see and , or inverrter gates
 we see full structure after flattening
 
+now lets do for a submodule
+$read_liberty -lib path
+$read_verilog file
+$synth -top submod //imp
+$abc -liberty path
+$show
+
+<img width="1695" height="893" alt="image" src="https://github.com/user-attachments/assets/ed48514c-9be9-4534-90ea-7cc5fadc1917" />
+why do we do this ? - if u have the same module multiple times it would be a waste to synthesise all so we just synthesize one and then sitch it together in top
+Difference between hierarchial and flattened
+H-Only modules level , Faster , preserved hierarchy,Modular structure 
+Flattened-whole design shown,slower,Collapsed hierarchy,Single, complex netlist
+
+
+
+
 
