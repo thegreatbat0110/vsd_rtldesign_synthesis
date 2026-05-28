@@ -53,7 +53,7 @@ flip flops --
 
 ----
 
-'''module dff_asyncres(input clk , d,asyncreset , output reg q);
+```module dff_asyncres(input clk , d,asyncreset , output reg q);
 always @(posedge clk  , posedge asyncreset)
 begin
  if(asyncreset)begin
@@ -65,7 +65,7 @@ begin
 
 end
 endmodule
-'''
+```
 
 
 
