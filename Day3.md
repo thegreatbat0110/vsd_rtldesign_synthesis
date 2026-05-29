@@ -26,9 +26,81 @@ $opt_clean -purge
 do abc -liberty and show
 <img width="687" height="144" alt="image" src="https://github.com/user-attachments/assets/9d4bc666-c908-4857-9d80-10a01d5fd774" />
 This is basically an AND gate.
+
 optcheck2.v
+
+```verilog
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
 <img width="668" height="387" alt="image" src="https://github.com/user-attachments/assets/c123504b-a3a3-4bfb-a5f2-4ec1bcf9c464" />
 do synth,opt_clean -purge , abc -liberty file_loc , show
 <img width="711" height="161" alt="image" src="https://github.com/user-attachments/assets/34620c7f-fd83-44c9-b67c-3e50d3a27599" />
+
+optcheck3.v
+
+```verilog
+module opt_check3(input a , input b, output y);
+	assign y = a?(c?b:0):0 ;
+endmodule
+```
+this gives u a&b&c 
+<img width="769" height="288" alt="image" src="https://github.com/user-attachments/assets/a9f55258-d912-4d6a-9728-63a099ad2b20" />
+<img width="675" height="214" alt="image" src="https://github.com/user-attachments/assets/43830753-8b7e-4fd0-bd0c-fafd35acb47a" />
+
+opt_check4.v
+
+```verilog
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
+simplifies to a xnor gate 
+y = ac + a'c'
+
+<img width="667" height="382" alt="image" src="https://github.com/user-attachments/assets/f792a57d-aa56-49c7-b54c-cdd163f9e773" />
+<img width="754" height="223" alt="image" src="https://github.com/user-attachments/assets/421c5140-2ac2-4f34-8f81-afcf214aecba" />
+
+///multiple modules left
+
+-----------------------------------------------------------------------------------------------
+ffs
+```verilog
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+<img width="1143" height="697" alt="image" src="https://github.com/user-attachments/assets/bdf9c852-055b-480f-8589-63445ef09969" />
+dfflibmap after synth
+<img width="925" height="49" alt="image" src="https://github.com/user-attachments/assets/592545fc-97d3-4024-9f78-cec9e5482d29" />
+abc -liberty
+<img width="676" height="146" alt="image" src="https://github.com/user-attachments/assets/48ed1058-132e-43d8-9c4c-7ae6b74382b6" />
+
+
+
+ff2
+```verilog
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+basically always 1
+
+<img width="1161" height="714" alt="image" src="https://github.com/user-attachments/assets/49ef05ef-2ccc-4a25-86c3-5e92ea4223c8" />
+<img width="684" height="425" alt="image" src="https://github.com/user-attachments/assets/0ec48592-5a2e-4e5a-bc92-68e595cad8d7" />
+
 
 
