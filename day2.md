@@ -53,20 +53,71 @@ flip flops --
 
 ----
 
+code d flip flop 's asyncronous reset / set 
+- if any one of asyncreset or asyncsettriggered u enter the always
+- clk has no use cause reset/set asynchronous here
+-an always block runs continuously but only executes the code inside it when triggered by a specific event defined in its sensitivity list
+
 ```verilog
 module dff_asyncres(input clk , d,asyncreset , output reg q);
 always @(posedge clk  , posedge asyncreset)
 begin
- if(asyncreset)begin
+ if(asyncreset)begin //for set sm code but change mod name ,asyncreset -> asyncset , q<=1'b1
  q <= 1'b0;
  else
  q<=d;
- 
- 
-
 end
 endmodule
 ```
+
+
+Synchronous
+'''verilog
+module dff_syncres(input clk ,asyncreset, d,syncreset , output reg q);
+always @(posedge clk ) //only triggered on clk edge not based on values of syncreset
+begin
+ if(syncreset)begin //for set sm code but change mod name ,asyncreset -> asyncset , q<=1'b1
+ q <= 1'b0; 
+ else
+ q<=d;
+end
+endmodule
+'''
+
+<img width="824" height="690" alt="image" src="https://github.com/user-attachments/assets/e25f9bc7-34f5-45e9-93da-a3876b3c93eb" />
+if enteed on asyncreset -> q <= 0
+if enetred on clk pulse -> if syncreset = 1 -> q<=0
+else q<=d
+
+----------------------------------------
+ to use iverilog
+ in verilog_files - $iverilog dff_asyncres.v tb_dff_asyncres.v //compile
+ $./a.out    //run
+ <img width="927" height="150" alt="image" src="https://github.com/user-attachments/assets/b379e893-588e-41e8-b982-98ead2695af2" />
+ $gtkwave tb_dff_asyncres.vcd //view waveform
+ <img width="1120" height="706" alt="image" src="https://github.com/user-attachments/assets/d7fab6cd-2deb-42f2-9520-9ac70d97ffc8" />
+ <img width="1131" height="700" alt="image" src="https://github.com/user-attachments/assets/078e13ee-a422-4c63-b827-5c7458746bfc" />
+ <img width="1140" height="702" alt="image" src="https://github.com/user-attachments/assets/b1bc96cf-efda-472d-bf64-a5b629c5a81d" />
+ using yosys to synthesize
+ <img width="806" height="237" alt="image" src="https://github.com/user-attachments/assets/696285eb-db2e-4dda-81ea-5f051d71ae29" />
+ since were using dffs keyword - dfflibmap
+ $abc -liberty fileloc
+ $show
+<img width="1051" height="163" alt="image" src="https://github.com/user-attachments/assets/3e7514eb-74f4-4f27-a16a-40b19c2cd700" />
+lib had active low set so inv used
+sync res->
+<img width="1427" height="272" alt="image" src="https://github.com/user-attachments/assets/4707627a-5eae-4768-8aef-78e33fd4c44b" />
+
+
+
+
+
+
+
+
+ 
+
+
 
 
 
