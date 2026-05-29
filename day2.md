@@ -108,7 +108,30 @@ lib had active low set so inv used
 sync res->
 <img width="1427" height="272" alt="image" src="https://github.com/user-attachments/assets/4707627a-5eae-4768-8aef-78e33fd4c44b" />
 
+ -----------------------------------------
+OPTIMIZATION
+ We use 2 files mul2 and mul9 
+ ```verilog
+ module mul2(input [2:0] a , output [3:0] y);
+  assign y = a * 2 ; //basically a left shift a<<1 
+  endmodule
+```
+<img width="499" height="278" alt="image" src="https://github.com/user-attachments/assets/cc89d5b1-3c4a-4cdd-9b0c-5147954c9900" />
+no cells used 
+when we call abc -liberty 
+<img width="902" height="186" alt="image" src="https://github.com/user-attachments/assets/551fb070-acda-4996-8d82-3020d37af775" />
+$show
+<img width="433" height="209" alt="image" src="https://github.com/user-attachments/assets/ebc1a2b2-4dce-4ac2-83f4-775f9b503f4e" />
 
+what happens
+y[3:1] = a[2:0]    (a's bits shifted left by 1)
+y[0]   = 1'b0      (LSB forced to 0)
+
+$write_verilog -noattr mul2_net.v 
+
+<img width="606" height="155" alt="image" src="https://github.com/user-attachments/assets/7d1a3fb8-5efe-4d54-86ee-f387f9c11e17" />
+
+   
 
 
 
