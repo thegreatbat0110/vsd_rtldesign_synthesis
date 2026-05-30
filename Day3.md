@@ -104,5 +104,35 @@ basically always 1
 <img width="1161" height="714" alt="image" src="https://github.com/user-attachments/assets/49ef05ef-2ccc-4a25-86c3-5e92ea4223c8" />
 <img width="684" height="425" alt="image" src="https://github.com/user-attachments/assets/0ec48592-5a2e-4e5a-bc92-68e595cad8d7" />
 
+dff_const3.v
+<img width="1445" height="793" alt="image" src="https://github.com/user-attachments/assets/d1dabbdc-29c1-4e52-975e-d2ce800323a1" />
+yosys
+<img width="679" height="416" alt="image" src="https://github.com/user-attachments/assets/41e133ac-e399-4eae-938d-a3915ffd383c" />
+
+<img width="1427" height="255" alt="image" src="https://github.com/user-attachments/assets/0b5734a9-f1eb-41a0-8598-913914ef64a5" />
+//do const4 and 5
+-------------------------------------------------------------------
+unused output optm
+counter
+```verilog
+
+module counter_opt (input clk , input reset , output q);
+  reg [2:0] count;
+  assign q =(count[0]==3'b110);
+
+  always @(posedge clk ,posedge reset)
+  begin
+   if(reset)
+   	count <= 3'b000;
+   else
+   	count <= count + 1;
+  end
+
+ endmodule
+ ```
+<img width="673" height="421" alt="image" src="https://github.com/user-attachments/assets/2b3cc7fa-1c11-46ce-93da-740f82ff3e6f" />
+<img width="1444" height="157" alt="image" src="https://github.com/user-attachments/assets/fa5c2253-5f33-4e3a-8569-6d7b371adf50" />
+
+
 
 
