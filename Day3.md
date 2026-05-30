@@ -66,6 +66,8 @@ y = ac + a'c'
 
 -----------------------------------------------------------------------------------------------
 ffs
+<img width="508" height="171" alt="image" src="https://github.com/user-attachments/assets/d5adffbe-c12a-489b-9171-20c766f67a8b" />
+
 ```verilog
 module dff_const1(input clk, input reset, output reg q);
 always @(posedge clk, posedge reset)
