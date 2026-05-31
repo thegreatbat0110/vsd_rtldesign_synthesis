@@ -34,3 +34,38 @@ Key Point: Always write synthesizable, unambiguous RTL and follow good coding pr
 <img width="697" height="196" alt="image" src="https://github.com/user-attachments/assets/26ab4113-1303-4f8d-91a4-1586cde3a511" />
 
 <img width="1136" height="694" alt="image" src="https://github.com/user-attachments/assets/764a42db-b416-4bf7-b63b-2fba4294e00f" />
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Blocking
+
+```verilog
+module blocking_caveat (input a, input b, input c, output reg d);
+  reg x;
+  always @ (*) begin
+    d = x & c;
+    x = a | b;
+  end
+endmodule
+```
+since x is does not have a value whe d is being evaluated it forms a latch or a flop.
+we need to give ita value first or use non blocking assignmnets
+use blocking staatemmenst carefully
+
+First . RTL Simuation
+<img width="1116" height="707" alt="image" src="https://github.com/user-attachments/assets/db736aba-06cd-4f4a-929b-72092dd54bbe" />
+<img width="687" height="408" alt="image" src="https://github.com/user-attachments/assets/31846947-e3f1-41b4-a2c6-fcf7a3fb7064" />
+<img width="698" height="198" alt="image" src="https://github.com/user-attachments/assets/99f7cccb-cbdb-48d8-a695-bad66df33bc4" />
+after write_verilog
+<img width="1135" height="700" alt="image" src="https://github.com/user-attachments/assets/2d26ccff-a607-4af8-8245-d32db8f2c4dc" />
+
+When Yosys synthesizes code, it:
+Ignores the blocking assignment order in the always block
+Analyzes the actual combinational logic: d = (a | b) & c
+Generates correct gate-level Verilog that implements this logic properly
+The synthesized netlist has no sequential evaluation issues
+
+ 
+
+
+
+
