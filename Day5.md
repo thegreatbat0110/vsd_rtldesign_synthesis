@@ -1,12 +1,14 @@
 1. If else : used for conditional execution in behavioral modeling, typically within procedural blocks (always, initial, tasks, or functions).
     ```verilog
     if (condition1) begin
-    // Code for condition1 true
-end else if (condition2) begin
+    // Code for condition1 
+        end
+    else if (condition2) begin
     // Code for condition2 true
-end else begin
+    end
+    else begin
     // Code if no conditions are true
-end
+    end
 ```
 
 2. Inferred latches occur when a combinational logic block does not assign a value to a variable in all possible execution paths.
