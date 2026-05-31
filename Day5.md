@@ -113,6 +113,29 @@ Lab3:partial_case_asign
 <img width="559" height="317" alt="image" src="https://github.com/user-attachments/assets/894f4e7a-d4c3-4d9e-983d-b8b801e7249b" />
 en = sel1 + sel0'
 
+lab4: badmux
+```verilog
+module bad_case (
+    input i0, input i1, input i2, input i3,
+    input [1:0] sel,
+    output reg y
+);
+always @(*) begin
+    case(sel)
+        2'b00: y = i0;
+        2'b01: y = i1;
+        2'b10: y = i2;
+        2'b1?: y = i3; // be careful with incomplete cases , tool gets confused
+    endcase
+end
+endmodule
+```
+<img width="691" height="342" alt="image" src="https://github.com/user-attachments/assets/448ab437-0ad4-4856-be45-e69ef65aab81" />
+<img width="682" height="188" alt="image" src="https://github.com/user-attachments/assets/5e3ed56e-50cb-4e13-94c8-6977984ac53a" />
+<img width="682" height="188" alt="image" src="https://github.com/user-attachments/assets/4cd0583d-fef8-4570-ad08-c170c268b137" />
+
+
+
 Looping Concepts
 1. For Loop
 -used in always
