@@ -103,6 +103,16 @@ module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y
 
 <img width="1447" height="311" alt="image" src="https://github.com/user-attachments/assets/88cced3d-c7ff-4b22-8ea8-9595a9a108bd" />
 
+Lab3:partial_case_asign
+
+<img width="671" height="472" alt="image" src="https://github.com/user-attachments/assets/cc34f8ba-0fd9-43b3-a2c1-8e413d5420e2" />
+
+<img width="682" height="232" alt="image" src="https://github.com/user-attachments/assets/2b7d079e-2f23-4e42-a086-f4f0bb9d77e7" />
+
+<img width="1421" height="428" alt="image" src="https://github.com/user-attachments/assets/1de2b965-330a-4113-8f30-8a39af55e3a9" />
+<img width="559" height="317" alt="image" src="https://github.com/user-attachments/assets/894f4e7a-d4c3-4d9e-983d-b8b801e7249b" />
+en = sel1 + sel0'
+
 Looping Concepts
 1. For Loop
 -used in always
