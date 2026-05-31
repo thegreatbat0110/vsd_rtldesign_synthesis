@@ -56,6 +56,19 @@ endmodule
 D5SK3
 Lab1:
 
+```verilog
+
+module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+always @ (*)
+begin
+case(sel)
+	2'b00 : y = i0;
+	2'b01 : y = i1;
+endcase
+end
+endmodule
+```
+
 <img width="1137" height="579" alt="Screenshot 2026-06-01 015733" src="https://github.com/user-attachments/assets/8849b46f-a059-4574-b212-c03d7781b4d8" />
 
 <img width="689" height="478" alt="Screenshot 2026-06-01 015832" src="https://github.com/user-attachments/assets/bec29dad-2c2f-424d-8a06-019888d86788" />
@@ -66,6 +79,29 @@ Lab1:
 
 <img width="788" height="325" alt="Screenshot 2026-06-01 020128" src="https://github.com/user-attachments/assets/26d4faa6-a8e5-4065-8b75-aaacf03d46a6" />
 
+Lab 2:
+
+```verilog
+module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+  always @ (*)
+   begin
+  case(sel)
+  	2'b00 : y = i0;
+  	2'b01 : y = i1;
+  	default : y = i2;
+  endcase
+   end
+   endmodule
+```
+<img width="444" height="261" alt="image" src="https://github.com/user-attachments/assets/5568139b-7524-42cb-bc21-661a2dd9c188" />
+
+<img width="1126" height="552" alt="image" src="https://github.com/user-attachments/assets/e3889f4e-4936-408e-9cd8-ce9757ccfeb5" />
+
+<img width="553" height="369" alt="image" src="https://github.com/user-attachments/assets/a3ec4971-f55d-41cf-9f0d-e93699a56321" />
+
+<img width="745" height="195" alt="image" src="https://github.com/user-attachments/assets/082f8e97-33bd-48a9-aa21-6576ec403c25" />
+
+<img width="1447" height="311" alt="image" src="https://github.com/user-attachments/assets/88cced3d-c7ff-4b22-8ea8-9595a9a108bd" />
 
 Looping Concepts
 1. For Loop
