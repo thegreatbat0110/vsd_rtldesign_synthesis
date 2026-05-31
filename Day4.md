@@ -27,4 +27,10 @@ Incomplete or ambiguous coding: E.g., missing else clauses, improper sensitivity
 Tool interpretation differences: Simulation and synthesis tools may interpret ambiguous RTL differently.
 
 Key Point: Always write synthesizable, unambiguous RTL and follow good coding practices to minimize mismatches.
- 
+
+ <img width="1152" height="510" alt="image" src="https://github.com/user-attachments/assets/cfbb6821-5a4f-4e44-ab2d-644d9065c87f" />
+
+<img width="488" height="318" alt="image" src="https://github.com/user-attachments/assets/53f92e14-174b-4f49-ae24-16899c09cdfe" />
+<img width="697" height="196" alt="image" src="https://github.com/user-attachments/assets/26ab4113-1303-4f8d-91a4-1586cde3a511" />
+
+<img width="1136" height="694" alt="image" src="https://github.com/user-attachments/assets/764a42db-b416-4bf7-b63b-2fba4294e00f" />
