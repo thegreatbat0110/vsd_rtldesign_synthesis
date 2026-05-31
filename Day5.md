@@ -29,8 +29,11 @@ always @(*) begin
 end
 endmodule
 ```
+
 <img width="1432" height="805" alt="image" src="https://github.com/user-attachments/assets/4d5d74cd-121a-41a4-a400-b72456735689" />
+
 <img width="677" height="306" alt="image" src="https://github.com/user-attachments/assets/34d39cfe-5e24-4f0a-ab26-a8cbda1d5c83" />
+
 <img width="310" height="205" alt="image" src="https://github.com/user-attachments/assets/470d40df-239d-4804-a962-9f987e761035" />
 
  Lab2:
@@ -45,11 +48,24 @@ end
 endmodule
 ```
 <img width="551" height="305" alt="image" src="https://github.com/user-attachments/assets/aab51ffd-f760-4cf8-894f-79b401086db0" />
+
 <img width="1459" height="746" alt="image" src="https://github.com/user-attachments/assets/11557ece-afa5-422e-acb7-0192db0f2985" />
+
 <img width="1443" height="330" alt="image" src="https://github.com/user-attachments/assets/d4660627-4fd3-4f57-8384-3ca52e8725ef" />
 
 D5SK3
 Lab1:
+
+<img width="1137" height="579" alt="Screenshot 2026-06-01 015733" src="https://github.com/user-attachments/assets/8849b46f-a059-4574-b212-c03d7781b4d8" />
+
+<img width="689" height="478" alt="Screenshot 2026-06-01 015832" src="https://github.com/user-attachments/assets/bec29dad-2c2f-424d-8a06-019888d86788" />
+
+<img width="710" height="176" alt="Screenshot 2026-06-01 015852" src="https://github.com/user-attachments/assets/b9abe854-e96f-49ac-8dec-a91af663260f" />
+
+<img width="1475" height="253" alt="Screenshot 2026-06-01 015908" src="https://github.com/user-attachments/assets/2de62181-c661-49fc-9489-457179fdffcb" />
+
+<img width="788" height="325" alt="Screenshot 2026-06-01 020128" src="https://github.com/user-attachments/assets/26d4faa6-a8e5-4065-8b75-aaacf03d46a6" />
+
 
 Looping Concepts
 1. For Loop
