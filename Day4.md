@@ -11,3 +11,20 @@ using write_verilog after abc -lib
 take noteof teh commands
 <img width="1458" height="774" alt="image" src="https://github.com/user-attachments/assets/1b4ce72c-5043-401a-8275-1fc871979be3" />
 <img width="1002" height="699" alt="image" src="https://github.com/user-attachments/assets/19c8a485-df9c-41c9-b3d5-d676d014993a" />
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Lab2:
+bad_mux.v
+here only sel is in sensitivity list so error
+<img width="1218" height="139" alt="image" src="https://github.com/user-attachments/assets/a8eda6d0-f932-45ed-9c5c-4f5a3132a07e" />
+Synthesis Simulation mismatch due to missing sensitivity list
+
+A synthesis-simulation mismatch occurs when the simulation results of RTL (pre-synthesis) do not match simulation results of the gate-level netlist (post-synthesis) or hardware. Reasons include:
+
+Non-synthesizable constructs: Use of delays, initial blocks, or other code not supported by synthesis.
+Incomplete or ambiguous coding: E.g., missing else clauses, improper sensitivity lists.
+Tool interpretation differences: Simulation and synthesis tools may interpret ambiguous RTL differently.
+
+Key Point: Always write synthesizable, unambiguous RTL and follow good coding practices to minimize mismatches.
+ 
