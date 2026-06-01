@@ -79,7 +79,36 @@ endmodule
 
 <img width="788" height="325" alt="Screenshot 2026-06-01 020128" src="https://github.com/user-attachments/assets/26d4faa6-a8e5-4065-8b75-aaacf03d46a6" />
 
-Lab 2:
+Lab2:
+```verilog
+module partial_case_assign (
+    input i0, input i1, input i2,
+    input [1:0] sel,
+    output reg y, output reg x
+);
+always @(*) begin
+    case(sel)
+        2'b00: begin
+            y = i0;
+            x = i2;
+        end
+        2'b01: y = i1;
+        default: begin
+            x = i1;
+            y = i2;
+        end
+    endcase
+end
+endmodule
+```
+<img width="663" height="477" alt="image" src="https://github.com/user-attachments/assets/8d82c2df-3ccc-4e3c-be7a-4752ad2975fc" />
+
+<img width="681" height="226" alt="image" src="https://github.com/user-attachments/assets/e0ee1765-f4a9-4069-8223-b76761df16b6" />
+
+<img width="1448" height="448" alt="image" src="https://github.com/user-attachments/assets/f4b0ae8a-539a-4280-8fef-4c1175d7b5b5" />
+
+
+Lab 3:
 
 ```verilog
 module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
@@ -113,7 +142,7 @@ Lab3:partial_case_asign
 <img width="559" height="317" alt="image" src="https://github.com/user-attachments/assets/894f4e7a-d4c3-4d9e-983d-b8b801e7249b" />
 en = sel1 + sel0'
 
-lab4: badmux
+lab4: bad_case.v
 ```verilog
 module bad_case (
     input i0, input i1, input i2, input i3,
@@ -130,10 +159,17 @@ always @(*) begin
 end
 endmodule
 ```
-<img width="691" height="342" alt="image" src="https://github.com/user-attachments/assets/448ab437-0ad4-4856-be45-e69ef65aab81" />
-<img width="682" height="188" alt="image" src="https://github.com/user-attachments/assets/5e3ed56e-50cb-4e13-94c8-6977984ac53a" />
-<img width="682" height="188" alt="image" src="https://github.com/user-attachments/assets/4cd0583d-fef8-4570-ad08-c170c268b137" />
+<img width="1130" height="677" alt="image" src="https://github.com/user-attachments/assets/899c64fe-62b4-401f-bc6c-52a5525fad12" />
 
+<img width="693" height="448" alt="image" src="https://github.com/user-attachments/assets/ca4cb6e6-d482-4bdd-921d-75517d295e9d" />
+
+<img width="612" height="146" alt="image" src="https://github.com/user-attachments/assets/c19e829e-826b-44a8-87dc-e39f50a3f63c" />
+
+<img width="1461" height="757" alt="image" src="https://github.com/user-attachments/assets/fadc1ad8-92b6-4fc3-bdef-4ee67bbd8786" />
+
+<img width="1128" height="710" alt="image" src="https://github.com/user-attachments/assets/d5488699-14ea-4e14-9de5-b97e7e8e55c5" />
+Note the xx
+<img width="838" height="271" alt="image" src="https://github.com/user-attachments/assets/1aaeb5af-37ca-4c23-a082-631e19bb047d" />
 
 
 Looping Concepts
