@@ -1,7 +1,5 @@
-d2sk2
-
 Sky130_fd_sc_hd__tt_025C_1v80.lib
-
+----------------------------------
 1st line is name of library
 
 -sky130: The SkyWater 130nm node technology 
@@ -40,7 +38,7 @@ Process Voltage Temperature together tell how silicon behaves need to factor in 
 
 <img width="1039" height="378" alt="image" src="https://github.com/user-attachments/assets/bc06b449-26b9-40ba-8b15-c2ed0f905438" />
 
-synth -top multiple_modules
+$synth -top multiple_modules
 
 <img width="509" height="802" alt="image" src="https://github.com/user-attachments/assets/4d94a3d8-7ee5-4b15-b9f8-c40a5b3d3439" />
 
