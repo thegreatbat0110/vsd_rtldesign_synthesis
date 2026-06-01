@@ -2,7 +2,7 @@
 Record of RTL design and Synthesis Workshop using SKY130 Technology conducted by Vlsi System Design (VSD) 
 ------------------------------------------------------------------------
 
-Daywise records:-
+Day wise records:-
 -----------------
 
 [Day1](https://github.com/thegreatbat0110/vsd_rtldesign_synthesis/blob/main/Day1.md) 
