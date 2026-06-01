@@ -1,5 +1,43 @@
 d2sk2
 
+Sky130_fd_sc_hd__tt_025C_1v80.lib
+
+1st line is name of library
+
+-sky130: The SkyWater 130nm node technology 
+
+-sc : standard cell
+
+-fd: Foundry -sc: Standard Cell. 
+
+-hd: High Density (The cell architecture is optimized for space and area efficiency). 
+
+-tt: Typical - Typical (The operating corner for Process, meaning nominal N-type and P-type transistor speeds).other egs fast , slow 
+
+-025C: 25° Celsius (The operating temperature for this specific timing model). 
+
+-1v80: 1.80 Volts (The nominal operating voltage). 
+
+-.lib: The Liberty Timing File format 
+
+Process Voltage Temperature together tell how silicon behaves need to factor in these variations to work everywhere.
+
+<img width="709" height="613" alt="image" src="https://github.com/user-attachments/assets/66544036-ecce-45d2-9798-a6488ba3ba66" />
+
+-technology : cmos tech 
+
+-.lib containns all cells cell is a keyword
+
+<img width="790" height="696" alt="image" src="https://github.com/user-attachments/assets/5cfa730b-409a-489c-8505-76f8f7db736f" />
+
+<img width="589" height="462" alt="image" src="https://github.com/user-attachments/assets/0274a4a7-dde4-4633-87c1-f1cb11c17159" />
+
+<img width="1450" height="697" alt="image" src="https://github.com/user-attachments/assets/7f942ed8-60f5-4fcc-bae9-820c4d7e96ca" />
+
+-sky130_fd_sc_hd__and2_0: The _0 at the end typically denotes a smaller drive strength (often a fractional or minimum-sized buffer/gate variant used to minimize area and load when a strong signal drive isn't necessary).
+
+-sky130_fd_sc_hd__and2_2: The _2 denotes a higher drive strength. It features larger internal transistors designed to charge and discharge output load capacitances much faster -Because a higher drive strength requires larger transistor channel widths, its physical footprint on the silicon is larger -transistor dimensions are larger in and2_2, its subthreshold and gate leakage currents are naturally higher.
+
 <img width="1039" height="378" alt="image" src="https://github.com/user-attachments/assets/bc06b449-26b9-40ba-8b15-c2ed0f905438" />
 
 synth -top multiple_modules
