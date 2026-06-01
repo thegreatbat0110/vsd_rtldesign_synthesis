@@ -94,7 +94,7 @@ endmodule
 
 -We need to give ita value first or use non blocking assignmnets
 
--Use blocking staatemmenst carefully
+-Use blocking statements carefully
 
 First, RTL Simuation
 
