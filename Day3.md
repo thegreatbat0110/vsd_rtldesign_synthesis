@@ -62,7 +62,19 @@ y = ac + a'c'
 <img width="667" height="382" alt="image" src="https://github.com/user-attachments/assets/f792a57d-aa56-49c7-b54c-cdd163f9e773" />
 <img width="754" height="223" alt="image" src="https://github.com/user-attachments/assets/421c5140-2ac2-4f34-8f81-afcf214aecba" />
 
-///multiple modules left
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+multiple_module_opt1 :
+$read_liberty
+$read_verilog
+$synth -top
+$flatten
+$opt_clean -purge
+$abc
+$show
+<img width="677" height="286" alt="image" src="https://github.com/user-attachments/assets/d40f8c1c-e52a-42fe-9e16-f931ff20ac1d" />
+mutiple_module_opt2 :
+<img width="536" height="620" alt="image" src="https://github.com/user-attachments/assets/5ad66479-1776-4561-aa1c-574562d3c1da" />
 
 -----------------------------------------------------------------------------------------------
 ffs
