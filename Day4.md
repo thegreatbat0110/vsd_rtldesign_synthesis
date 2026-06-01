@@ -1,8 +1,15 @@
 Intro to GLS:
 -Rnning test bench with netlist as design inder test
+-netlist logically same as rtl code
+Why do we eed gld
+-to verify logical correctness of design after synthesis
+-ensure timing of design is met (shud be run with delay annotation)
+-turns ur code into actual gates
+<img width="1113" height="519" alt="image" src="https://github.com/user-attachments/assets/eb2fcc74-5cc3-441f-a84f-36fd0459a917" />
 
-
-
+Becareful of: Missing sensitivity list -> double edge ff
+Blocking Assignments: "blocks" aka evaluates first statement first 
+NonBlocking Assignments:Parallel evaluation
 
 
 
