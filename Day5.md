@@ -108,7 +108,7 @@ endmodule
 <img width="1448" height="448" alt="image" src="https://github.com/user-attachments/assets/f4b0ae8a-539a-4280-8fef-4c1175d7b5b5" />
 
 
-Lab 3:
+Lab3:
 
 ```verilog
 module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
@@ -132,7 +132,7 @@ module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y
 
 <img width="1447" height="311" alt="image" src="https://github.com/user-attachments/assets/88cced3d-c7ff-4b22-8ea8-9595a9a108bd" />
 
-Lab3:partial_case_asign
+partial_case_asign   //done double remove
 
 <img width="671" height="472" alt="image" src="https://github.com/user-attachments/assets/cc34f8ba-0fd9-43b3-a2c1-8e413d5420e2" />
 
@@ -203,8 +203,8 @@ end
 end
 
 ```
-
-GRNERATE FOR
+Genvar is a special keyword used to declare a generation loop variable. It acts as an iterator exclusively during the elaboration phase (compile/build time) to duplicate hardware structures programmatically. It does not represent a physical register or wire, and it entirely disappears before simulation or runtime begins
+GENERATE FOR
 ```verilog
 
 genvar i;
@@ -214,6 +214,116 @@ for (m = 0;m<8;m=m+1)begin
 endgenerate
 end
 ``` 
-
-
 ----------------------------------------
+Lab1:
+```verilog
+module mux_generate (
+    input i0, input i1, input i2, input i3,
+    input [1:0] sel,
+    output reg y
+);
+wire [3:0] i_int;
+assign i_int = {i3, i2, i1, i0};
+integer k;
+always @(*) begin
+    for (k = 0; k < 4; k = k + 1) begin
+        if (k == sel)
+            y = i_int[k];
+    end
+end
+endmodule
+```
+<img width="1312" height="713" alt="image" src="https://github.com/user-attachments/assets/e0ee6229-8297-43f9-bd4d-95a8a6de00ab" />
+<img width="652" height="167" alt="image" src="https://github.com/user-attachments/assets/203ee52c-8cd0-4c23-b97a-c5fd936a7573" />
+<img width="681" height="433" alt="image" src="https://github.com/user-attachments/assets/846d03af-d74e-42c9-9463-4fd50f5047b7" />
+
+Lab2: 
+Mux using case
+```verilog
+module demux_case (
+    output o0, output o1, output o2, output o3,
+    output o4, output o5, output o6, output o7,
+    input [2:0] sel,
+    input i
+);
+reg [7:0] y_int;
+assign {o7, o6, o5, o4, o3, o2, o1, o0} = y_int;
+always @(*) begin
+    y_int = 8'b0;
+    case(sel)
+        3'b000 : y_int[0] = i;
+        3'b001 : y_int[1] = i;
+        3'b010 : y_int[2] = i;
+        3'b011 : y_int[3] = i;
+        3'b100 : y_int[4] = i;
+        3'b101 : y_int[5] = i;
+        3'b110 : y_int[6] = i;
+        3'b111 : y_int[7] = i;
+    endcase
+end
+endmodule
+```
+<img width="460" height="400" alt="image" src="https://github.com/user-attachments/assets/1e51363e-e69b-49e6-9496-66821417d966" />
+<img width="669" height="213" alt="image" src="https://github.com/user-attachments/assets/a94bdcd8-4636-4e57-9d3b-09cffa767ca4" />
+<img width="663" height="723" alt="image" src="https://github.com/user-attachments/assets/feed51b4-8c97-4ad8-b2cb-e10c082c7650" />
+<img width="1104" height="697" alt="image" src="https://github.com/user-attachments/assets/f65b02f6-3a34-412f-b563-2a8216314915" />
+<img width="835" height="547" alt="image" src="https://github.com/user-attachments/assets/2432bc51-0d77-4bfc-954c-8faf8325ba6c" />
+<img width="862" height="593" alt="image" src="https://github.com/user-attachments/assets/fbb03ae2-4e3f-4762-961f-5ebd3241e285" />
+
+
+
+
+
+Using Loop:
+```verilog
+module demux_generate (
+    output o0, output o1, output o2, output o3,
+    output o4, output o5, output o6, output o7,
+    input [2:0] sel,
+    input i
+);
+reg [7:0] y_int;
+assign {o7, o6, o5, o4, o3, o2, o1, o0} = y_int;
+integer k;
+always @(*) begin
+    y_int = 8'b0;
+    for (k = 0; k < 8; k = k + 1) begin
+        if (k == sel)
+            y_int[k] = i;
+    end
+end
+endmodule
+```
+<img width="687" height="601" alt="image" src="https://github.com/user-attachments/assets/97359321-7512-4175-bf61-6a8d20dea401" />
+<img width="819" height="563" alt="image" src="https://github.com/user-attachments/assets/b207b459-6333-483f-8d11-20ee73bf0f28" />
+<img width="865" height="589" alt="image" src="https://github.com/user-attachments/assets/5296cd8e-c636-4e8d-99a7-cafcc40e6210" />
+
+Lab3:
+```verilog
+module rca (
+    input [7:0] num1,
+    input [7:0] num2,
+    output [8:0] sum
+);
+wire [7:0] int_sum;
+wire [7:0] int_co;
+
+genvar i;
+generate
+    for (i = 1; i < 8; i = i + 1) begin
+        fa u_fa_1 (.a(num1[i]), .b(num2[i]), .c(int_co[i-1]), .co(int_co[i]), .sum(int_sum[i]));
+    end
+endgenerate
+
+fa u_fa_0 (.a(num1[0]), .b(num2[0]), .c(1'b0), .co(int_co[0]), .sum(int_sum[0]));
+
+assign sum[7:0] = int_sum;
+assign sum[8] = int_co[7];
+endmodule
+```
+<img width="1364" height="189" alt="image" src="https://github.com/user-attachments/assets/89860c29-c223-4166-8439-15bb38532031" />
+<img width="1378" height="175" alt="image" src="https://github.com/user-attachments/assets/9844c8ff-55a7-4e3a-8a1e-e9fc5ee0ab4f" />
+<img width="1361" height="179" alt="image" src="https://github.com/user-attachments/assets/b80b6438-56a6-4418-b2b4-6bda4ad8a1c6" />
+
+
+
