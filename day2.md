@@ -110,7 +110,7 @@ endmodule
 
 Synchronous
 
-'''verilog
+```verilog
 module dff_syncres(input clk ,asyncreset, d,syncreset , output reg q);
 always @(posedge clk ) //only triggered on clk edge not based on values of syncreset
 begin
@@ -120,7 +120,7 @@ begin
  q<=d;
 end
 endmodule
-'''
+```
 
 <img width="824" height="690" alt="image" src="https://github.com/user-attachments/assets/e25f9bc7-34f5-45e9-93da-a3876b3c93eb" />
 
