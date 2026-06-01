@@ -1,6 +1,6 @@
 D1SK1:
 -------
--testbench - applies stimulus (test vectors) tp design to test its functionality
+-testbench - applies stimulus (test vectors) to design to test its functionality
 
 -Simulator (iverilog) looksfor changes in signlas of input , simulates design
 
@@ -16,29 +16,32 @@ D1SK1:
 
 Beginning with labs:-
 -------
+```bash
 mkdir vlsi
- cd vlsi
- mkdir vsdflow
- git clone  https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
- <img width="1225" height="520" alt="image" src="https://github.com/user-attachments/assets/af856d85-dd1d-4a44-b1e1-19747e4b077a" />
- ```bash
-   cd vlsi
-   cd sky130RTLDesignAndSynthesisWorkshop
-   ls -ltr
-   cd my_lib // has verilog_models
-   ls
-   cd lib   //This file contain the  Sky130 Standard Cell library // outside my_lib
-   cd ..
-   cd verilog_model //Content of verilog models
+cd vlsi
+mkdir vsdflow
+git clone  https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ```
 
-   <img width="1233" height="651" alt="image" src="https://github.com/user-attachments/assets/730ea9e5-8aab-4735-84e3-9c8ef692c2de" />
-   
-   <img width="1319" height="620" alt="image" src="https://github.com/user-attachments/assets/6de215b2-6bc9-433e-9716-90f5107f544d" />
-  
-   in verilog_files:
-   
-   $iverilog good_mux.v tb_good_mux.v
+<img width="1225" height="520" alt="image" src="https://github.com/user-attachments/assets/af856d85-dd1d-4a44-b1e1-19747e4b077a" />
+```bash
+  cd vlsi
+  cd sky130RTLDesignAndSynthesisWorkshop
+  ls -ltr
+  cd my_lib // has verilog_models
+  ls
+  cd lib   //This file contain the  Sky130 Standard Cell library // outside my_lib
+  cd ..
+  cd verilog_model //Content of verilog models
+```
+
+<img width="1233" height="651" alt="image" src="https://github.com/user-attachments/assets/730ea9e5-8aab-4735-84e3-9c8ef692c2de" />
+
+<img width="1319" height="620" alt="image" src="https://github.com/user-attachments/assets/6de215b2-6bc9-433e-9716-90f5107f544d" />
+
+in verilog_files:
+
+$iverilog good_mux.v tb_good_mux.v
    
 $./a.out
 
@@ -50,22 +53,18 @@ $gtkwave tb_good_mux.vcd
 
 Dont forget to append variables and zoom out
 
-Seeing files using cat command (gvim wasnt working)
-
 <img width="1109" height="692" alt="image" src="https://github.com/user-attachments/assets/bf39fb99-94b3-46dc-8cc1-4c4a3dfcc34d" />
 
 <img width="1048" height="262" alt="image" src="https://github.com/user-attachments/assets/acf81cb1-4671-4964-b5b7-ea82b89993e0" />
-
-output
 
 -$dumpvars(level, list_of_variables_or_modules);
 
 -level: An integer specifying the depth of the hierarchy to dump.
  - 0: Dumps all variables in the specified module and all of its sub-modules (recursive).
  - 1: Dumps only the variables in the specified module, ignoring sub-modules.
- - n: Dumps variables in the specified module and all sub-modules up to \(n-1\) levels deep
+ - n: Dumps variables in the specified module and all sub-modules up to (n-1) levels deep
 
--netlist - A Verilog netlist is a low-level structural description of a digital circuit that details the exact electronic components used and how they are connected. It serves as a machine-generated "blueprint," typically created by synthesis tools, replacing 
+-netlist - A Verilog netlist is a low-level structural description of a digital circuit that details the exact electronic components used and how they are connected. It serves as a machine-generated "blueprint," typically created by synthesis tools
 
 ----------------------------------------------------------------------------
 D1SK3
@@ -77,7 +76,7 @@ D1SK3
 
 -read_verilog - read design
 
--read_librty - read .lib 
+-read_liberty - read .lib 
 
 -write_verilog -  make netlist
 
@@ -95,16 +94,15 @@ RTL - behavioural representaion of required specification
 
 -result = netlist 
 
--rtl- > gate level translation =  syn
+-rtl- > gate level translation =  synthesis
 
 -.lib - collection of logical modules - and or nor nand and their diff flavours / specifications
 
--combinational delay - maxm speed of ops 
+-combinational delay - max speed of ops 
 
 -tclk > tcq_a(prop d of ffa) + tcomb + tsetup_b
 
--setup tim
-e - minimum amount of time an input signal must remain stable before a triggering event
+-setup time- minimum amount of time an input signal must remain stable before a triggering event
 
 -hold time-  The minimum amount of time a data signal must remain stable after a clock edge so a flip-flop can reliably capture it
 
