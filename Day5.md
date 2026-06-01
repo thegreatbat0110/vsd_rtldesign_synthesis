@@ -18,7 +18,7 @@ This causes the synthesis tool to infer a latch, which may not be the designerâ€
 
 This may cause timing errors and racearound conditions.
 
-In this case u can either use case - endcase (reg can be used) (remember to put a fefsult to prevent racearound) or add an else .
+In this case u can either use case - endcase (reg can be used) (remember to put a default to prevent racearound) or add an else .
 
 Differences between case and if-else :-
 
