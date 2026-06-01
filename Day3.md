@@ -111,6 +111,19 @@ yosys
 
 <img width="1427" height="255" alt="image" src="https://github.com/user-attachments/assets/0b5734a9-f1eb-41a0-8598-913914ef64a5" />
 //do const4 and 5
+dff_const4.v
+<img width="461" height="256" alt="image" src="https://github.com/user-attachments/assets/a6e4e855-5214-4d27-8fac-5efd0ae654d6" />
+
+<img width="668" height="573" alt="image" src="https://github.com/user-attachments/assets/303f8db4-553d-415e-bdc7-9798fcbee98b" />
+
+dff_const5.v
+
+<img width="512" height="248" alt="image" src="https://github.com/user-attachments/assets/a1cf90c7-c820-4ca6-bb60-238bdae9932e" />
+<img width="1444" height="268" alt="image" src="https://github.com/user-attachments/assets/969a1b18-fbd6-4102-9c53-e42fb0a7ae85" />
+
+
+
+
 -------------------------------------------------------------------
 unused output optm
 counter
