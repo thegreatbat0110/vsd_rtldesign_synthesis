@@ -1,3 +1,13 @@
+Intro to GLS:
+-Rnning test bench with netlist as design inder test
+
+
+
+
+
+
+
+
 Lab 1:
 ```verilog
 module ternary_operator_mux (input i0, input i1, input sel, output y);
