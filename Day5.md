@@ -180,7 +180,7 @@ Looping Concepts
 2.Generate For Loop
 -used outside always
 -instantiating hardware eg. if u want u instantiate an or / and gate multiple times
-
+MUX
 ```verilog
 integer i;
 always @(*) begin
@@ -190,4 +190,30 @@ always @(*) begin
     end
 end
 ```
+DEMUX
+```verilog
+integer m;
+always @(*) begin
+data_out[7:0] = 8'b0 ;
+for (m = 0;m<8;m=m+1)begin
+if(m == sel)begin
+	data_out[m] = data_in ;
+end
+end
+end
+
+```
+
+GRNERATE FOR
+```verilog
+
+genvar i;
+generate
+for (m = 0;m<8;m=m+1)begin
+	and u_ans(.a(in1[i]),.b(in2[i]),.y(y[i]));
+endgenerate
+end
+``` 
+
+
 ----------------------------------------
